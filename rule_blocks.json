@@ -1,0 +1,115 @@
+[
+  {
+		"name": "practice",
+		"iti": 500,
+		"introText": "tutorial starting",
+		"ruleOrder": [
+			"once",
+			"single",
+			"first"
+		]
+	},
+	{
+		"name": "easy",
+		"iti": 500,
+		"introText": "easy starting",
+		"ruleOrder": [
+			"sequence of two"
+		]
+	},
+	{
+		"name": "negation",
+		"iti": 500,
+		"introText": "negation starting",
+		"ruleOrder": [
+			"negation",
+			"sequence with negation",
+			"not first"
+		]
+	},
+	{
+		"name": "medium",
+		"iti": 500,
+		"introText": "medium starting",
+		"ruleOrder": [
+			"simple sequence",
+			"rule shifting",
+			"branching"
+		]
+
+	},
+	{
+		"name": "second order",
+		"iti": 500,
+		"introText": "second order starting",
+		"ruleOrder": [
+			"facing left",
+			"sequence end facing right",
+			"not and facing left"
+		]
+	},
+	{
+		"name": "hard",
+		"iti": 500,
+		"introText": "hard starting",
+		"ruleOrder": [
+			"modus ponens",
+			"ordinal branching"
+		]
+	},
+	{
+		"name": "easy_two",
+		"iti": 500,
+		"introText": "easy2 starting",
+		"ruleOrder": [
+			"sequence of two",
+			"negation"
+		]
+	},
+  {
+		"name": "volatility",
+		"iti": 250,
+		"introText": "volatility1 starting",
+		"ruleOrder": [
+			"sequence of two"
+		]
+  },
+  {
+		"name": "volatility",
+		"iti": 250,
+		"introText": "volatility1 swapped starting",
+    "swapped": true,
+		"ruleOrder": [
+			"sequence of two"
+		]
+  },
+  {
+		"name": "volatility",
+		"iti": 250,
+		"introText": "volatility2 stroop2 swapped starting",
+    "swapped": true,
+    "stroop": true,
+		"ruleOrder": [
+			"simple sequence"
+		]
+  },
+  {
+		"name": "volatility",
+		"iti": 250,
+		"introText": "volatility2 stroop3 starting",
+    "stroop": true,
+		"ruleOrder": [
+			"branching"
+		]
+  },
+  {
+		"name": "volatility",
+		"iti": 250,
+		"introText": "volatility3 swapped starting",
+    "swapped": true,
+		"ruleOrder": [
+			"single",
+      "negation"
+		]
+  }
+]

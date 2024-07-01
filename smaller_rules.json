@@ -1,0 +1,175 @@
+{
+	"once" : {
+		"humanReadableExplanation" : "Press {key_act} the first time you see a {a} {stimulus}. Skip the rest of the {stimuli}.",
+		"rules" : [
+			{
+				"target" : ["a"],
+				"transitionToRule" : 1
+			},
+			{}
+		]
+	},
+	"single": {
+		"humanReadableExplanation": "Photograph all {a} {stimuli}. Skip other {stimuli}.",
+		"rules" : [
+			{
+				"target" : ["a"]
+			}
+		]
+	},
+	"first": {
+		"humanReadableExplanation": "Photograph the first {stimulus}, then photograph every {stimulus} that matches it.",
+		"rules" : [
+			{
+				"target" : ["1"]
+			}
+		]
+	},
+
+	"two identical" : {
+		"humanReadableExplanation" : "Press {key_act} when you see two {a} {stimuli}, one after another.",
+		"rules" : [
+			{
+				"target" : ["a", "a"]
+			}
+		]
+	},
+	"sequence of two" : {
+		"humanReadableExplanation" : "Press {key_act} when you see a {a} {stimulus} followed immediately by a {b} {stimulus}.",
+		"rules" : [
+			{
+				"target" : ["a", "b"]
+			}
+		]
+	},
+
+	"negation": {
+		"humanReadableExplanation" : "Photograph all {stimuli} that are not {a}.",
+		"rules" : [
+			{
+				"target" : ["!a"]
+			}
+		]
+	},
+	"sequence with negation": {
+		"humanReadableExplanation" : "Photograph any {stimulus} that comes after a {a} {stimulus}, unless it is {b}.",
+		"rules" : [
+			{
+				"target" : ["a","!b"]
+			}
+		]
+	},
+	"not first": {
+		"humanReadableExplanation" : "Photograph all {stimuli} that are not the same color as the first {stimulus} you see.",
+		"rules" : [
+			{
+				"target" : ["!1"]
+			}
+		]
+	},
+
+	"simple sequence" : {
+		"humanReadableExplanation" : "Press {key_act} when you see a sequence of three {stimuli} matching: {a}, {b}, {c}.",
+		"rules" : [
+			{
+				"target" : ["a", "b", "c"]
+			}
+		]
+	},
+	"rule shifting" :{
+		"humanReadableExplanation" : "Wait for the first {a} {stimulus}, then take a picture of it. Then wait for the first {b} {stimulus}, then take a picture of it. Alternate taking pictures of one {a} {stimulus} and one {b} {stimulus}.",
+		"rules" : [
+			{
+				"target" : ["a"],
+				"transitionToRule": 1
+			},
+			{
+				"target" : ["b"],
+				"transitionToRule": 0
+			}
+		]
+	},
+
+	"branching": {
+		"humanReadableExplanation" : "Start by taking a picture of each {a} {stimulus}. But if you see a {b} {stimulus}, photograph that {b} {stimulus}, and from then on, only photograph {b} {stimuli}.",
+		"rules" : [
+			{
+				"target" : ["a"],
+				"transitionOnTarget": ["b"],
+				"transitionToRule" : 1
+			},
+			{
+				"target": ["b"]
+			}
+		]
+	},
+
+	"facing left": {
+		"humanReadableExplanation" : "Photograph all {a} {stimuli} that are {L}.",
+		"stimuliMirroring": true,
+		"rules" : [
+			{
+				"target" : ["aL"]
+			}
+		]
+	},
+
+	"sequence end facing right": {
+		"humanReadableExplanation" : "Photograph if you see a {a} {stimulus} followed by a {b} {stimulus} {R}.",
+		"stimuliMirroring": true,
+		"rules" : [
+			{
+				"target" : ["a", "bR"]
+			}
+		]
+	},
+	"not and facing left": {
+		"humanReadableExplanation" : "Photograph all {stimuli} which are not {a} and are {L}.",
+		"stimuliMirroring": true,
+		"rules" : [
+			{
+				"target" : ["!aL"]
+			}
+		]
+	},
+
+	"seq branching": {
+		"humanReadableExplanation" : "Start by taking a picture of each {a} {stimulus}. But if you see two {b} {stimuli} in a row, start photographing {c} {stimuli} instead and stop photographing {a} {stimuli}.",
+		"rules" : [
+			{
+				"target" : ["a"],
+				"transitionOnTarget": ["b", "b"],
+				"transitionToRule" : 1
+			},
+			{
+				"target": ["c"]
+			}
+		]
+	},
+	"modus ponens": {
+		"humanReadableExplanation" : "If the first {stimulus} color you see is {a} then photograph every {b} {stimulus}. But if the first {stimulus} color you see is not {a} then photograph every {c} {stimulus}.",
+		"rules" : [
+			{
+				"startCondition": ["a"],
+				"target" : ["b"]
+			},
+			{
+				"startCondition": ["!a"],
+				"target" : ["c"]
+			}
+		]
+	},
+	"ordinal branching" : {
+		"humanReadableExplanation" : "Skip the first {stimulus}. If the second {stimulus} color you see is {a} then photograph every {b} {stimulus}. But if the second {stimulus} color you see is not {a} then photograph every {c} {stimulus}.",
+		"rules" : [
+			{
+				"startCondition": ["*", "a"],
+				"target" : ["b"]
+			},
+			{
+				"startCondition": ["*", "!a"],
+				"target" : ["c"]
+			}
+		]
+	}
+}
