@@ -28,7 +28,7 @@ def maybe(p, e):
     return p
 
 class StimulusResponse:
-  def __init__(self, time_out: bool, correct: bool, did_photo: bool, should_photo: bool, stim_color: Color, stim_left: bool, stroop: bool, swapped: bool, response_time: float, frames: int, refresh_rate: float) -> None:
+  def __init__(self, time_out: bool, correct: bool, did_photo: bool, should_photo: bool, stim_color: Color, stim_left: bool, stroop: bool, swapped: bool, response_time: float, frames: int, refresh_rate: float, stroop_color: Color) -> None:
     self.time_out = time_out
     self.correct = correct
 
@@ -38,6 +38,7 @@ class StimulusResponse:
     self.stim_left = stim_left
 
     self.stroop = stroop
+    self.stroop_color = stroop_color
     self.swapped = swapped
 
     self.response_time = response_time
@@ -51,6 +52,7 @@ class StimulusResponse:
       "user_action": maybe(self.did_photo, "PHOTO" if self.did_photo else "SKIP"),
       "correct_action": maybe(self.should_photo, "PHOTO" if self.should_photo else "SKIP"),
       "stimulus_color": color_to_str(self.stim_color),
+      "stroop_bird_color": color_to_str(self.stroop_color) if self.stroop else "NA",
       "facing_direction": "L" if self.stim_left else "R",
       "stroop": self.stroop,
       "inputs_swapped": self.swapped,
@@ -135,4 +137,16 @@ class Stimulus:
       self.container.window.flip()
       core.wait(0.5)
 
-    return StimulusResponse(not response, correct, did_photo, self.photograph, self.color, not self.facing_right, self.stroop, self.swapped, t, frames, self.container.window.monitorFramePeriod)
+    return StimulusResponse(
+      not response, 
+      correct, 
+      did_photo, 
+      self.photograph, 
+      self.color, 
+      not self.facing_right, 
+      self.stroop, 
+      self.swapped, 
+      t, 
+      frames, 
+      self.container.window.monitorFramePeriod, 
+      random_color)

@@ -1,4 +1,5 @@
 from psychopy import visual, core
+import atexit
 
 from image_container import ImageContainer
 from task import Task
@@ -12,9 +13,11 @@ container.loading.draw()
 mywin.flip()
 
 task = Task(container)
+
+atexit.register(task.save_data) # register exit procedure to process + store data in case experiment terminated early
+atexit.register(task.process_data)
+
 task.run()
-task.process_data()
-task.save_data()
 
 mywin.close()
 core.quit()

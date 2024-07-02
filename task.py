@@ -5,12 +5,15 @@ from pandas import DataFrame
 class Task:
   def __init__(self, container) -> None:
     self.groups = []
-    self.experiment_data = None
-    for i in range(len(block_data)):
-      self.groups.append((i, generate_group(i, container)))
-
-    # for i in range(3, 4):
+    self.experiment_data = []
+    # for i in range(len(block_data)):
     #   self.groups.append((i, generate_group(i, container)))
+
+    # for i in range(8, 11):
+    #   self.groups.append((i, generate_group(i, container)))
+
+    for i in range(3, 4):
+      self.groups.append((i, generate_group(i, container)))
 
     explanation1 = ("A scientist is looking for patterns in the migration of birds. "
       "Your job is to help him. Birds will appear one after another, and he wants you to "
@@ -37,7 +40,7 @@ class Task:
       print("No user ID given, task aborted")
       return None
     
-    self.container.window.fullscr = True
+    # self.container.window.fullscr = True
 
     self.intro1.run()
     self.intro2.run()
@@ -53,6 +56,7 @@ class Task:
     return experiment_data
   
   def process_data(self):
+    print("Processing data...")
     # experiment data structure:
     # [
     #   {'name': str, 'data': [[{"iti": float, "attempts": ((float, int), [stimulus response, ...]), "rule_name": str}, ...], ...]},
@@ -92,6 +96,7 @@ class Task:
     grouped_by_name = []
     current = []
 
+    loop_counter = 0
     i = 0
     while i < len(self.experiment_data):
       current = [self.experiment_data[i]]
@@ -99,7 +104,17 @@ class Task:
       while i < len(self.experiment_data) and self.experiment_data[i]["name"] == self.experiment_data[i - 1]["name"]:
         current.append(self.experiment_data[i])
         i += 1
+        loop_counter += 1
+
+        if loop_counter > 1000000:
+          print("inf loop likely")
+          break
       grouped_by_name.append(current)
+
+      loop_counter += 1
+      if loop_counter > 1000000:
+        print("inf loop likely")
+        break
     
     total = []
     
@@ -109,7 +124,6 @@ class Task:
       name = name_group[0]["name"]
       for group in name_group: # each of these follows the data structure described above
         for block_data in group["data"]: 
-          trial_no += 1
           for attempt_num, (instruction_time, stimuli_data) in enumerate(block_data["attempts"]):
             for i, stimulus in enumerate(stimuli_data):
               # create a dict here with all of the variables
@@ -125,9 +139,11 @@ class Task:
               d["block_num"] = trial_no
               d["sequence_num"] = name_i
               total.append(d)
+          trial_no += 1
     
     df = DataFrame.from_dict(total)
     self.dataframe = df
   
   def save_data(self):
+    print("Saving data...")
     self.dataframe.to_csv(f'output/{self.user_info.user_id}.csv', index=False)

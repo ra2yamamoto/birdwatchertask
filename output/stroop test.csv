@@ -1,0 +1,25 @@
+time_out,user_action,correct_action,stimulus_color,facing_direction,stroop,inputs_swapped,reaction_time,stroop_color,iti,reading_time,group_name,stimulus_num,rule_name,attempt,block_num,sequence_num
+False,SKIP,SKIP,RED,L,False,True,1.3199494279688224,NA,0.25,1.9026532860007137,volatility,0,sequence of two,0,0,0
+False,SKIP,SKIP,GREEN,L,False,True,0.3372176810516976,NA,0.25,1.9026532860007137,volatility,1,sequence of two,0,0,0
+False,SKIP,SKIP,BLUE,L,False,True,0.3642620320315473,NA,0.25,1.9026532860007137,volatility,2,sequence of two,0,0,0
+False,PHOTO,PHOTO,GREEN,L,False,True,0.32894777500769123,NA,0.25,1.9026532860007137,volatility,3,sequence of two,0,0,0
+False,SKIP,SKIP,GREEN,L,False,True,0.46427546499762684,NA,0.25,1.9026532860007137,volatility,4,sequence of two,0,0,0
+False,SKIP,SKIP,BLUE,L,False,True,0.34789422200992703,NA,0.25,1.9026532860007137,volatility,5,sequence of two,0,0,0
+False,SKIP,SKIP,YELLOW,L,False,True,0.44716727500781417,NA,0.25,1.9026532860007137,volatility,6,sequence of two,0,0,0
+False,SKIP,SKIP,BLUE,L,False,True,0.36419380898587406,NA,0.25,1.9026532860007137,volatility,7,sequence of two,0,0,0
+False,SKIP,SKIP,BLUE,L,True,True,0.5842835259973072,RED,0.25,4.866640028019901,volatility,0,simple sequence,0,1,0
+False,SKIP,SKIP,RED,L,True,True,0.31338328099809587,GREEN,0.25,4.866640028019901,volatility,1,simple sequence,0,1,0
+False,PHOTO,PHOTO,GREEN,L,True,True,0.41202813299605623,RED,0.25,4.866640028019901,volatility,2,simple sequence,0,1,0
+False,SKIP,SKIP,YELLOW,L,True,True,0.26159925694810227,BLUE,0.25,4.866640028019901,volatility,3,simple sequence,0,1,0
+False,SKIP,SKIP,YELLOW,L,True,True,0.16164600395131856,BLUE,0.25,4.866640028019901,volatility,4,simple sequence,0,1,0
+False,SKIP,SKIP,GREEN,L,True,True,0.21276265900814906,GREEN,0.25,4.866640028019901,volatility,5,simple sequence,0,1,0
+False,SKIP,SKIP,RED,L,True,True,0.23250527604250237,BLUE,0.25,4.866640028019901,volatility,6,simple sequence,0,1,0
+False,PHOTO,PHOTO,RED,L,True,False,1.485174561967142,RED,0.25,4.79569670901401,volatility,0,branching,0,2,0
+False,PHOTO,PHOTO,RED,L,True,False,0.4810596210299991,YELLOW,0.25,4.79569670901401,volatility,1,branching,0,2,0
+False,SKIP,SKIP,GREEN,L,True,False,0.46144562400877476,GREEN,0.25,4.79569670901401,volatility,2,branching,0,2,0
+False,PHOTO,PHOTO,BLUE,L,True,False,0.5118934439960867,YELLOW,0.25,4.79569670901401,volatility,3,branching,0,2,0
+False,PHOTO,PHOTO,BLUE,L,True,False,0.4452048689709045,YELLOW,0.25,4.79569670901401,volatility,4,branching,0,2,0
+False,SKIP,SKIP,GREEN,L,True,False,0.39500287803821266,RED,0.25,4.79569670901401,volatility,5,branching,0,2,0
+False,SKIP,SKIP,GREEN,L,True,False,0.480201083002612,RED,0.25,4.79569670901401,volatility,6,branching,0,2,0
+False,SKIP,SKIP,RED,L,True,False,0.562358879018575,BLUE,0.25,4.79569670901401,volatility,7,branching,0,2,0
+False,SKIP,SKIP,RED,L,True,False,0.4621649030013941,RED,0.25,4.79569670901401,volatility,8,branching,0,2,0
