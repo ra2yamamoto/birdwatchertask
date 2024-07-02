@@ -29,7 +29,7 @@ class InstructionPage:
          + self.instructions
          + "\n\nPress any key to continue")
     
-    text_box = visual.TextBox2(self.container.window, s, color="black", size=[20, None])
+    text_box = visual.TextBox2(self.container.window, s, color="black", size=[20, None], fillColor=None)
 
     t = None
     frames = 1

@@ -1,11 +1,13 @@
 from generate_trial_sequences import generate_group, block_data
 from instructions import InstructionPage, UserInfo
 from pandas import DataFrame
+from psychopy import event
 
 class Task:
   def __init__(self, container) -> None:
     self.groups = []
     self.experiment_data = []
+
     for i in range(len(block_data)):
       self.groups.append((i, generate_group(i, container)))
 
@@ -34,7 +36,8 @@ class Task:
       print("No user ID given, task aborted")
       return None
     
-    # self.container.window.fullscr = True
+    self.container.window.fullscr = True
+    event.Mouse(visible=False)
 
     self.intro1.run()
     self.intro2.run()

@@ -1,4 +1,4 @@
-from psychopy import visual, core
+from psychopy import visual, core, event
 import atexit
 
 from image_container import ImageContainer

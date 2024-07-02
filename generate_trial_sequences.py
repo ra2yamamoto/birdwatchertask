@@ -8,10 +8,10 @@ import json
 import numpy as np
 
 HUMAN_READABLE_COLORS = {
-  Color.BLUE: "BLUE",
-  Color.RED: "RED",
-  Color.GREEN: "GREEN",
-  Color.YELLOW: "YELLOW",
+  Color.BLUE: "<c=blue>BLUE</c>",
+  Color.RED: "<c=red>RED</c>",
+  Color.GREEN: "<c=green>GREEN</c>",
+  Color.YELLOW: "<c=(0.75, 0.75, 0)>YELLOW</c>",
 }
 
 data = None
