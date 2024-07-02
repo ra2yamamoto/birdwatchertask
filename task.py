@@ -6,13 +6,7 @@ class Task:
   def __init__(self, container) -> None:
     self.groups = []
     self.experiment_data = []
-    # for i in range(len(block_data)):
-    #   self.groups.append((i, generate_group(i, container)))
-
-    # for i in range(8, 11):
-    #   self.groups.append((i, generate_group(i, container)))
-
-    for i in range(3, 4):
+    for i in range(len(block_data)):
       self.groups.append((i, generate_group(i, container)))
 
     explanation1 = ("A scientist is looking for patterns in the migration of birds. "
