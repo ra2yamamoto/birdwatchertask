@@ -33,12 +33,12 @@ class ImageContainer: # also contains reference to window obj
     #   Color.YELLOW: visual.ImageStim(self.window, image="assets/spider-yellow.png")
     # }
 
-    # self.stroop = {
-    #   Color.BLUE: visual.TextBox2(win=self.window, text="BLUE", color="black", bold=True, letterHeight=2.5, alignment="center"),
-    #   Color.GREEN: visual.TextBox2(win=self.window, text="GREEN", color="black", bold=True, letterHeight=2.5, alignment="center"),
-    #   Color.RED: visual.TextBox2(win=self.window, text="RED", color="black", bold=True, letterHeight=2.5, alignment="center"),
-    #   Color.YELLOW: visual.TextBox2(win=self.window, text="YELLOW", color="black", bold=True, letterHeight=2.5, alignment="center")
-    # }
+    self.stroop = {
+      Color.BLUE: visual.TextBox2(win=self.window, text="BLUE", color="black", bold=True, letterHeight=2.5, alignment="center"),
+      Color.GREEN: visual.TextBox2(win=self.window, text="GREEN", color="black", bold=True, letterHeight=2.5, alignment="center"),
+      Color.RED: visual.TextBox2(win=self.window, text="RED", color="black", bold=True, letterHeight=2.5, alignment="center"),
+      Color.YELLOW: visual.TextBox2(win=self.window, text="YELLOW", color="black", bold=True, letterHeight=2.5, alignment="center")
+    }
 
     self.fixation = visual.ImageStim(self.window, image="assets/fixation.png")
 

@@ -89,7 +89,7 @@ def generate_block(rule, container, swapped=False, stroop=False, iti=0.5):
   stimuli_groups = []
   explanations = []
   for i in range(3):
-    sequence = generate_trials(data[rule]["rules"], vary_facing=vf)
+    sequence = generate_trials(data[rule]["rules"], rule_name=rule, vary_facing=vf)
     photograph_sequence = evaluate_fsa_on_trials(data[rule]["rules"], sequence)
     color_sequence, exp = assign_colors(data[rule]["humanReadableExplanation"], sequence, swapped=swapped)
 

@@ -58,7 +58,7 @@ def states_and_transitions_reached(rule_set, trials):
   # fill out this table with the number of rules reached
 
   # each sublist represents [target, transition on target, transition]
-  tracker = [[0, 0, 0] for r in rule_set]
+  tracker = [[0, 0, 0] for _ in rule_set]
 
   start_conditions = [rule for rule in rule_set if "startCondition" in rule]
 

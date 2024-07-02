@@ -45,15 +45,29 @@ def cross_over(mom, dad, vary_facing=False):
 
   return trials
 
-def fitness(rule_set, trials):
+def longest_a_sequence(trials):
+  max_counter = 0
+  counter = 0
+  for i in range(1, len(trials)):
+    if trials[i] == 'a' and trials[i - 1] == 'a':
+      counter += 1
+      max_counter = max(max_counter, counter)
+    else:
+      counter = 0
+  return max_counter
+
+def fitness(rule_set, trials, rule_name=None):
   # returns (perfect match, fitness)
   reached = sum(
     sum(1 if t > 0 else 0 for t in r) 
     for r in states_and_transitions_reached(rule_set, trials))
   desired = count_states_and_transitions(rule_set)
+  if rule_name == "sequence with negation":
+    # special case, check for sequences longer than two
+    reached -= 1 if longest_a_sequence(trials) > 1 else 0
   return (desired == reached, reached)
 
-def generate_trials(rule_set, pop_size=50, vary_facing=False, verbose=False):
+def generate_trials(rule_set, rule_name=None, pop_size=50, vary_facing=False, verbose=False):
   generation = 1
   population = [generate_random_trials(vary_facing=vary_facing) for _ in range(pop_size)]
 
@@ -62,7 +76,7 @@ def generate_trials(rule_set, pop_size=50, vary_facing=False, verbose=False):
     fitnesses = []
 
     for individual in population:
-      (perfect_match, f) = fitness(rule_set, individual)
+      (perfect_match, f) = fitness(rule_set, individual, rule_name=rule_name)
       if perfect_match:
         if verbose: print(f"Trial sequence generated in {generation} generations")
         return individual
