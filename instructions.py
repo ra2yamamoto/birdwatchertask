@@ -1,6 +1,5 @@
 from image_container import ImageContainer
 from psychopy import visual, core, event, gui
-import sys
 
 class InstructionPage:
   def __init__(self, instructions: str, container: ImageContainer, include_default=True, keys_switched=False, stroop=False, show_instructions=True) -> None:

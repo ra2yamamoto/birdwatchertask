@@ -12,8 +12,6 @@ class Color(Enum):
   RED = 2
   YELLOW = 3
 
-# class ExperimentEndedEarlyException()
-
 def color_to_str(c: Color) -> str:
   if c == Color.BLUE:
     return "BLUE"
